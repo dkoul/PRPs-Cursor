@@ -1,44 +1,4 @@
-# PRP (Product Requirement prompts)
-
-- A collection of prompts i use in my every day work
-
-## Video Walkthrough
-
-👉 https://www.youtube.com/watch?v=KVOZ9s1S9Gk&lc=UgzfwxvFjo6pKEyPo1R4AaABAg
-
-### ☕ Support This Work
-
-**Found value in these resources?**
-
-👉 **Buy me a coffee:** https://coff.ee/wirasm
-
-I spent a considerable amount of time creating these resources and prompts. If you find value in this project, please consider buying me a coffee to support my work.
-
-That will help me maintain and improve the resources available for free
-
----
-
-### 🎯 Transform Your Team with AI Engineering Workshops
-
-**Ready to move beyond toy demos to production-ready AI systems?**
-
-👉 **Book a workshop:** https://www.rasmuswiding.com/
-
-✅ **What you'll get:**
-
-- Put your team on a path to become AI power users
-- Learn the exact PRP methodology used by top engineering teams
-- Hands-on training with Cursor, PRPs, and real codebases
-- From beginner to advanced AI engineering workshops for teams and individuals
-
-💡 **Perfect for:** Engineering teams, Product teams, and developers who want AI that actually works in production
-
-Let's talk!
-Contact me directly at rasmus@widinglabs.com
-
-# AI Engineering Resources for Cursor
-
-A comprehensive library of assets and context engineering for Agentic Engineering, optimized for Cursor. This repository provides the Product Requirement Prompt (PRP) methodology, pre-configured workflows, and extensive documentation to enable AI-assisted development that delivers production-ready code on the first pass.
+Cursor adaptation of Rasmus's work at https://github.com/Wirasm/PRPs-agentic-eng Please, buy him a coffee: https://coff.ee/wirasm
 
 ## What is PRP?
 
@@ -162,17 +122,6 @@ The `cursor_workflows/` directory contains workflow files that integrate with Cu
    @prp_execute.md PRPs/my-feature.md
    ```
 
-2. **Using the runner script**:
-   ```bash
-   # Interactive mode with Cursor (recommended)
-   uv run PRPs/scripts/prp_runner.py --prp my-feature --interactive --model cursor
-
-   # Headless mode with Claude Code
-   uv run PRPs/scripts/prp_runner.py --prp my-feature --output-format json --model claude
-
-   # Streaming JSON with Claude Code
-   uv run PRPs/scripts/prp_runner.py --prp my-feature --output-format stream-json --model claude
-   ```
 
 ### PRP Best Practices
 
@@ -260,7 +209,7 @@ your-project/
 │   └── code_review.md     # Review code changes
 ├── PRPs/
 │   ├── templates/         # PRP templates
-│   ├── scripts/          # PRP runner (supports both Cursor and Claude)
+│   ├── scripts/          # PRP runner
 │   ├── ai_docs/          # Library documentation
 │   ├── completed/        # Finished PRPs
 │   └── *.md              # Active PRPs
@@ -297,19 +246,6 @@ cd ../project-auth && cursor .
 cd ../project-api && cursor .
 ```
 
-### CI/CD Integration
-
-Use the PRP runner in headless mode with Claude Code:
-
-```yaml
-# GitHub Actions example
-- name: Execute PRP
-  run: |
-    uv run PRPs/scripts/prp_runner.py \
-      --prp implement-feature \
-      --output-format json \
-      --model claude > result.json
-```
 
 ### Custom Workflows
 
@@ -352,45 +288,3 @@ Do something specific to my project.
 - `prp_spec.md` - Specification template
 - `prp_planning.md` - Planning template with diagrams
 
-### Example PRP
-
-- `example-from-workshop-mcp-crawl4ai-refactor-1.md` - Real-world refactoring example
-
-## Claude Code Compatibility
-
-This framework maintains full compatibility with Claude Code:
-
-### Using Claude Code Commands
-
-If you have Claude Code installed, you can still use the original `.claude/commands/` system:
-
-```bash
-# Copy Claude commands to your project
-cp -r /path/to/PRPs-agentic-eng/.claude/commands .claude/
-```
-
-### Dual Mode Support
-
-The PRP runner supports both Cursor and Claude Code:
-
-```bash
-# Cursor (interactive, recommended)
-uv run PRPs/scripts/prp_runner.py --prp my-feature --interactive --model cursor
-
-# Claude Code (headless with JSON output)
-uv run PRPs/scripts/prp_runner.py --prp my-feature --output-format json --model claude
-```
-
-## License
-
-MIT License
-
-## Support
-
-I spent a considerable amount of time creating these resources and prompts. If you find value in this project, please consider buying me a coffee to support my work.
-
-👉 **Buy me a coffee:** https://coff.ee/wirasm
-
----
-
-Remember: The goal is one-pass implementation success through comprehensive context. Happy coding with Cursor and Claude Code!
