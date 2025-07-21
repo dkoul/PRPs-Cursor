@@ -45,7 +45,6 @@ Implement the feature following the PRP:
 ### Step 4: Review Your Work
 Review changes using PRP methodology:
 ```
-@code_review.md
 ```
 
 **What this does:**
